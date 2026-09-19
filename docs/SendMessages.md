@@ -1,0 +1,69 @@
+# 📤 Send Messages
+
+Simple, minimal API that works just like ntfy - but with email delivery!
+
+## 🚀 Basic Usage
+
+Send a notification with title and body:
+
+```bash
+# Just a title and a body
+curl https://YOUR_DOMAIN/YOUR_API_KEY -d $'Title\nBody'
+
+# Provide title in URL
+curl https://YOUR_DOMAIN/YOUR_API_KEY?title=Title -d 'Body'
+```
+
+## 🎯 Advanced Features
+
+### 📧 Custom From/To Addresses
+
+Send from/to specific email addresses:
+
+```bash
+https://YOUR_DOMAIN/YOUR_API_KEY?_from=alerts@company.com&_to=admin@company.com
+```
+
+### 🔍 Debug Mode
+
+See full request details for troubleshooting:
+
+```bash
+https://YOUR_DOMAIN/YOUR_API_KEY?_debug=Title
+```
+
+**Debug output includes:**
+
+- Full request URL
+- Request headers
+- Request body
+- Response details
+
+### 🎨 Use a Template
+
+Use pre-built templates for rich formatting:
+
+```bash
+curl https://YOUR_DOMAIN/YOUR_API_KEY?_template=Jellyfin -d 'DATA'
+```
+
+Can use `_template` key if you can't use the `template` key
+
+**Available templates:** See our [Supported Apps](../src/templates/Apps.md) guide
+
+## 🔗 Integration Examples
+
+**GitHub Actions:**
+
+```yaml
+- name: Notify on failure
+  run: curl ${{ secrets.NOTIFICATION_URL }} -d "Build failed: ${{ github.workflow }}"
+```
+
+**Cron Job:**
+
+```bash
+#!/usr/bin/env bash
+
+curl https://YOUR_DOMAIN/YOUR_API_KEY -d $'Daily Backup\n$(date): Backup completed successfully'
+```
