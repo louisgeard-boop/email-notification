@@ -16,6 +16,13 @@
 		{
 			"name": "sendEmail"
 		}
+{
+  // ...
+  "vars": {
+    "DEFAULT_TO": "louisgeard@gmail.com"
+  },
+  // ...
+}
 	]
 
 	/**
