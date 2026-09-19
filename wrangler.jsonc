@@ -3,28 +3,24 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "email-notification",
-	"main": "src/index.ts",
-	"keep_vars": true,
-	"compatibility_date": "2025-08-23",
-	"compatibility_flags": ["nodejs_compat"],
-	"observability": {
-		"enabled": true
-	},
-	"send_email": [
-		{
-			"name": "sendEmail"
-		}
-{
-  // ...
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "email-notification",
+  "main": "src/index.ts",
+  "keep_vars": true,
+  "compatibility_date": "2025-08-23",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "send_email": [
+    {
+      "name": "sendEmail"
+    }
+  ],
   "vars": {
     "DEFAULT_TO": "louisgeard@gmail.com"
-  },
-  // ...
+  }
 }
-	]
-
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
