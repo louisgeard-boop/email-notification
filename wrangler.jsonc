@@ -15,7 +15,6 @@
 	"send_email": [
 		{
 			"name": "sendEmail"
-			"DEFAULT_TO": "louigeard@gmail.com"
 		}
 	]
 
